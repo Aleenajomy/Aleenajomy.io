@@ -27,20 +27,7 @@ const experiences = [
       "Recommended and implemented secure coding practices."
     ]
   },
-  {
-    role: "Quality Inspector",
-    company: "SFO Technologies",
-    location: "Bengaluru",
-    period: "Feb 2022 – Mar 2022",
-    highlights: []
-  },
-  {
-    role: "Quality Controller",
-    company: "SS Technology",
-    location: "Mysore",
-    period: "May 2019 – Jun 2021",
-    highlights: []
-  }
+
 ];
 
 export default function Experience() {
