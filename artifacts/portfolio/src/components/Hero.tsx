@@ -39,7 +39,8 @@ export default function Hero() {
               View My Work <ChevronRight size={18} />
             </a>
             <a
-              href="mailto:aleenajomy4@gmail.com"
+              href="/resume.pdf"
+              download="Aleena_Jomy_Resume.pdf"
               className="px-6 py-3 rounded-md bg-secondary text-foreground font-semibold border border-border flex items-center gap-2 hover:bg-secondary/80 transition-all hover:scale-105 active:scale-95"
             >
               <Download size={18} /> Download Resume
@@ -73,8 +74,8 @@ export default function Hero() {
             <div className="absolute inset-0 bg-secondary rounded-2xl overflow-hidden border border-border flex items-center justify-center">
               <img 
                 src="/avatar.png" 
-                alt="Aleena Jomy Abstract Portrait" 
-                className="w-full h-full object-cover mix-blend-luminosity opacity-80"
+                alt="Aleena Jomy" 
+                className="w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.8)] pointer-events-none" />
             </div>

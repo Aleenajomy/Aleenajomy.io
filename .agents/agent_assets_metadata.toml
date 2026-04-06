@@ -1,8 +1,0 @@
-uploads = []
-outputs = []
-
-[[generated]]
-id = "OI6hWcpSItKhHlJpyJoee"
-uri = "file://artifacts/portfolio/public/avatar.png"
-type = "image"
-title = "Abstract tech portrait avatar"
