@@ -26,15 +26,21 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 20
           cache: pnpm
 
-      - run: pnpm install --no-frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile --ignore-scripts
+        env:
+          PNPM_FLAGS: --no-optional
 
       - name: Build portfolio
         run: pnpm --filter @workspace/portfolio run build
         env:
           BASE_PATH: /Aleenajomy.io/
+
+      - name: List build output
+        run: ls -la artifacts/portfolio/dist/public/
 
       - uses: actions/configure-pages@v5
 
