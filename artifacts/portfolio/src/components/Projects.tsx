@@ -4,10 +4,18 @@ import { Github, ExternalLink, Folder } from "lucide-react";
 
 const projects = [
   {
+    title: "MoneySuivi – Personal Finance Management Platform",
+    year: "2026",
+    tech: ["React", "Node.js", "Express.js", "PostgreSQL", "Prisma"],
+    description: "Full-stack personal finance platform supporting expense tracking, budget management, EMI monitoring, asset tracking, and borrow/lend ledger management. Built 20+ REST API endpoints for transactions, budgets, loans, notifications, auth, and financial analytics. Implemented JWT auth, recurring transaction automation, PWA support, and web push notifications.",
+    live: "https://smartexpencetracker-frontend.onrender.com",
+    github: null
+  },
+  {
     title: "Finder – Hyperlocal Worker Discovery Platform",
     year: "2026",
     tech: ["Django", "DRF", "React", "PostgreSQL"],
-    description: "Geolocation-based platform enabling discovery of nearby service providers. Developed 10+ REST API endpoints for search, filtering, and efficient data retrieval. Implemented pincode-level filtering logic for accurate location-based results.",
+    description: "Geolocation-based platform enabling discovery of nearby service providers. Developed 10+ REST API endpoints for search, filtering, and efficient data retrieval. Implemented pincode-level filtering logic for accurate location-based results. Deployed on Render and Vercel.",
     live: "https://finder-swart.vercel.app",
     github: null
   },
@@ -15,17 +23,9 @@ const projects = [
     title: "ResumeMaker – AI ATS Resume Optimizer",
     year: "2026",
     tech: ["React", "TypeScript", "Django", "PostgreSQL", "LaTeX"],
-    description: "AI-powered application producing job-specific, ATS-optimized resumes. Reduces manual editing time by ~70%. LaTeX-driven PDF generation with 100% parse accuracy across 5 ATS tools. 8 REST APIs supporting profile storage, JWT auth, and async generation.",
+    description: "AI-powered application producing job-specific, ATS-optimized resumes, reducing manual editing time by ~70%. LaTeX-driven PDF generation with 100% parse accuracy across 5 ATS tools. ATS keyword analysis module increased resume-job match scores by 40 percentage points.",
     live: null,
     github: "https://github.com/Aleenajomy/ResumeMaker"
-  },
-  {
-    title: "Job Portal Web Application",
-    year: "2025",
-    tech: ["Django", "DRF", "React", "PostgreSQL"],
-    description: "Full-stack recruitment system supporting 3 user roles (employer, applicant, admin). 12 REST API endpoints for job postings, application tracking, profile management. JWT authentication and RBAC; validated with 30+ Postman test cases.",
-    live: null,
-    github: "https://github.com/Aleenajomy/Job-portal"
   },
   {
     title: "Stylo – Virtual Wardrobe Web Application",

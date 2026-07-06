@@ -9,10 +9,10 @@ const experiences = [
     location: "Remote",
     period: "Nov 2025 – Jan 2026",
     highlights: [
-      "Built and maintained 15+ REST API endpoints using Django REST Framework.",
-      "Reduced PostgreSQL query execution time by 25% through SQL optimization.",
-      "Accelerated frontend-backend integration by 30%.",
-      "Validated 100% of API endpoints using Postman."
+      "Built and maintained 15+ REST API endpoints using Django REST Framework for authentication, user management, and workflow automation, supporting ~500 daily requests.",
+      "Reduced PostgreSQL query execution time by 25% through SQL optimization, indexing strategies, and query plan analysis on a database of 10,000+ records.",
+      "Accelerated frontend-backend integration by 30% by collaborating with React developers to define API contracts and mock data schemas.",
+      "Validated 100% of API endpoints using Postman test suites; managed version history across 3+ Git branches."
     ]
   },
   {
@@ -26,8 +26,7 @@ const experiences = [
       "Utilized OWASP ZAP and Metasploit for security testing.",
       "Recommended and implemented secure coding practices."
     ]
-  },
-
+  }
 ];
 
 export default function Experience() {

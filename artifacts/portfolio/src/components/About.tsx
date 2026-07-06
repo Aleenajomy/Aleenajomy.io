@@ -43,10 +43,10 @@ export default function About() {
           
           <div className="text-lg text-muted-foreground space-y-6 leading-relaxed">
             <p>
-              I am a Software Engineer based in Kerala, India, with hands-on experience building secure and scalable web applications. My core expertise lies in backend development using Python, Django, and Django REST Framework, paired with a solid understanding of frontend integration using React.js.
+              I am a Computer Science graduate based in Kannur, Kerala, with hands-on experience developing web applications, REST APIs, and database-driven solutions using Python, Django, JavaScript, React, and PostgreSQL.
             </p>
             <p>
-              I specialize in developing geolocation-based platforms with advanced search and filtering logic, designing robust database schemas, and ensuring performance optimization. Work driven by clean architecture and a security-first approach is my standard.
+              I've built full-stack applications involving authentication, data management, automation, and analytics while applying software development best practices. Familiar with API integration, database optimization, Git, GitHub, and modern development tools.
             </p>
           </div>
         </motion.div>

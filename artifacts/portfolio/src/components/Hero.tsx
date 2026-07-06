@@ -28,7 +28,7 @@ export default function Hero() {
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
-            I'm Aleena Jomy. I specialize in building scalable RESTful APIs, robust backend architectures, and secure web applications using Python and Django.
+            I'm Aleena Jomy. I specialize in building scalable RESTful APIs, robust backend architectures, and full-stack web applications using Python, Django, Node.js, and React.
           </p>
           
           <div className="flex flex-wrap items-center gap-4 mt-4">
@@ -56,7 +56,7 @@ export default function Hero() {
               <Linkedin size={24} />
               <span className="sr-only">LinkedIn</span>
             </a>
-            <a href="mailto:aleenajomy4@gmail.com" className="text-muted-foreground hover:text-primary transition-colors p-2">
+            <a href="https://mail.google.com/mail/?view=cm&to=aleenajomy4@gmail.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2">
               <Mail size={24} />
               <span className="sr-only">Email</span>
             </a>

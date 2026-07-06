@@ -3,11 +3,12 @@ import { motion } from "framer-motion";
 
 const skills = {
   Languages: ["Python", "JavaScript", "TypeScript", "Java", "C"],
-  Backend: ["Django", "Django REST Framework", "REST API Development", "API Design"],
+  Backend: ["Django", "Django REST Framework", "Node.js", "Express.js (Basic)", "REST API Development"],
   Frontend: ["React.js", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
-  Databases: ["PostgreSQL", "MySQL", "Query Optimization", "Data Modeling"],
-  Core: ["Geolocation-Based Systems", "Search & Filtering Logic", "Backend Architecture", "MVC Architecture"],
-  Tools: ["Git", "GitHub", "Postman", "Linux", "Docker (Beginner)"]
+  Databases: ["PostgreSQL", "MySQL", "MongoDB (Basic)", "Query Optimization"],
+  Authentication: ["JWT Authentication", "Role-Based Access Control (RBAC)"],
+  Concepts: ["MVC Architecture", "OOP", "Data Structures", "Agile Methodologies", "SDLC"],
+  Tools: ["Git", "GitHub", "Postman", "Linux", "Docker (Beginner)", "CI/CD (Basic)"]
 };
 
 export default function Skills() {
