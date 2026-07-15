@@ -3,26 +3,66 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="py-8 bg-background border-t border-border">
+    <footer
+      className="py-8"
+      style={{
+        backgroundColor: "hsl(36, 60%, 99%)",
+        borderTop: "2px solid #D96A2B",
+      }}
+    >
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="text-primary font-mono font-bold text-xl tracking-tight">
-          ALEENA.
+        {/* Logo — Blackletter */}
+        <div
+          className="text-2xl tracking-wide"
+          style={{ fontFamily: "'Pirata One', cursive", color: "#D96A2B" }}
+        >
+          Aleena.
         </div>
-        
-        <p className="text-muted-foreground text-sm font-mono text-center">
-          Built with React & Tailwind. Engineered by Aleena Jomy.
+
+        {/* Credit text */}
+        <p
+          className="text-sm text-center"
+          style={{
+            fontFamily: "'Courier Prime', monospace",
+            color: "hsl(25, 20%, 50%)",
+          }}
+        >
+          Crafted with React & Tailwind · Engineered by Aleena Jomy
         </p>
 
-        <div className="flex items-center gap-4">
-          <a href="https://github.com/Aleenajomy" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2">
+        {/* Social links */}
+        <div className="flex items-center gap-2">
+          <a
+            href="https://github.com/Aleenajomy"
+            target="_blank"
+            rel="noreferrer"
+            className="p-2 rounded-md transition-all hover:-translate-y-0.5"
+            style={{ color: "hsl(25, 20%, 52%)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#D96A2B")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(25, 20%, 52%)")}
+          >
             <Github size={20} />
             <span className="sr-only">GitHub</span>
           </a>
-          <a href="https://linkedin.com/in/aleena-jomy" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2">
+          <a
+            href="https://linkedin.com/in/aleena-jomy"
+            target="_blank"
+            rel="noreferrer"
+            className="p-2 rounded-md transition-all hover:-translate-y-0.5"
+            style={{ color: "hsl(25, 20%, 52%)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#D96A2B")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(25, 20%, 52%)")}
+          >
             <Linkedin size={20} />
             <span className="sr-only">LinkedIn</span>
           </a>
-          <a href="mailto:aleenajomy4@gmail.com" className="text-muted-foreground hover:text-primary transition-colors p-2">
+          <a
+            href="mailto:aleenajomy4@gmail.com"
+            className="p-2 rounded-md transition-all hover:-translate-y-0.5"
+            style={{ color: "hsl(25, 20%, 52%)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#D96A2B")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(25, 20%, 52%)")}
+          >
             <Mail size={20} />
             <span className="sr-only">Email</span>
           </a>

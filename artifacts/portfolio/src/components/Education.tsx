@@ -27,9 +27,13 @@ const certifications = [
 
 export default function Education() {
   return (
-    <section id="education" className="py-24 border-b border-border">
+    <section
+      id="education"
+      className="py-24"
+      style={{ borderBottom: "1px solid hsl(30, 25%, 87%)" }}
+    >
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16">
-        
+
         {/* Education Column */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -37,21 +41,76 @@ export default function Education() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-10 flex items-center gap-4">
-            <span className="text-primary font-mono text-sm font-normal tracking-widest uppercase">05.</span>
+          <p
+            className="text-sm tracking-[0.2em] uppercase mb-3"
+            style={{ fontFamily: "'Courier Prime', monospace", color: "#D96A2B" }}
+          >
+            05. Academic Background
+          </p>
+          <h2
+            className="text-4xl md:text-5xl font-bold mb-4"
+            style={{ fontFamily: "'Cinzel', serif", color: "#1A1209", lineHeight: 1.2 }}
+          >
             Education
           </h2>
+          <div
+            className="h-1 w-24 rounded-full mb-10"
+            style={{ background: "linear-gradient(90deg, #D96A2B, #F0944A)" }}
+          />
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             {education.map((edu, idx) => (
-              <div key={idx} className="bg-card border border-border p-6 rounded-xl relative overflow-hidden group">
-                <div className="absolute right-0 top-0 w-24 h-24 bg-primary/5 rounded-bl-full transition-transform group-hover:scale-110" />
-                <GraduationCap className="w-8 h-8 text-primary mb-4" />
-                <h3 className="text-xl font-bold text-foreground mb-2">{edu.degree}</h3>
-                <p className="text-muted-foreground font-medium mb-1">{edu.institution}</p>
-                <div className="flex flex-wrap items-center justify-between gap-4 mt-4 pt-4 border-t border-border/50 font-mono text-sm">
-                  <span className="text-primary/80">{edu.period}</span>
-                  <span className="bg-secondary px-3 py-1 rounded-md text-secondary-foreground">{edu.grade}</span>
+              <div
+                key={idx}
+                className="p-6 rounded-xl relative overflow-hidden group transition-all duration-300 hover:-translate-y-1"
+                style={{
+                  backgroundColor: "hsl(36, 60%, 99%)",
+                  border: "1px solid hsl(30, 25%, 87%)",
+                  boxShadow: "0 2px 10px rgba(107,75,50,0.07)",
+                }}
+              >
+                {/* Decorative corner flourish */}
+                <div
+                  className="absolute right-0 top-0 w-20 h-20 rounded-bl-full transition-transform group-hover:scale-110"
+                  style={{ backgroundColor: "rgba(217,106,43,0.07)" }}
+                />
+
+                <GraduationCap
+                  className="w-8 h-8 mb-4"
+                  style={{ color: "#D96A2B" }}
+                />
+                <h3
+                  className="text-lg font-bold mb-1"
+                  style={{ fontFamily: "'Cinzel', serif", color: "#1A1209" }}
+                >
+                  {edu.degree}
+                </h3>
+                <p
+                  className="font-medium mb-1"
+                  style={{ fontFamily: "'Lora', serif", color: "hsl(25, 20%, 45%)" }}
+                >
+                  {edu.institution}
+                </p>
+                <div
+                  className="flex flex-wrap items-center justify-between gap-3 mt-4 pt-4 text-sm"
+                  style={{ borderTop: "1px solid hsl(30, 25%, 88%)" }}
+                >
+                  <span
+                    style={{ fontFamily: "'Courier Prime', monospace", color: "#D96A2B" }}
+                  >
+                    {edu.period}
+                  </span>
+                  <span
+                    className="px-3 py-1 rounded-md"
+                    style={{
+                      fontFamily: "'Courier Prime', monospace",
+                      backgroundColor: "#FFF3EB",
+                      color: "#C05A20",
+                      border: "1px solid rgba(217,106,43,0.2)",
+                    }}
+                  >
+                    {edu.grade}
+                  </span>
                 </div>
               </div>
             ))}
@@ -65,17 +124,44 @@ export default function Education() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-10 flex items-center gap-4">
-            <span className="text-primary font-mono text-sm font-normal tracking-widest uppercase">06.</span>
+          <p
+            className="text-sm tracking-[0.2em] uppercase mb-3"
+            style={{ fontFamily: "'Courier Prime', monospace", color: "#D96A2B" }}
+          >
+            06. Credentials
+          </p>
+          <h2
+            className="text-4xl md:text-5xl font-bold mb-4"
+            style={{ fontFamily: "'Cinzel', serif", color: "#1A1209", lineHeight: 1.2 }}
+          >
             Certifications
           </h2>
+          <div
+            className="h-1 w-24 rounded-full mb-10"
+            style={{ background: "linear-gradient(90deg, #D96A2B, #F0944A)" }}
+          />
 
-          <div className="bg-card border border-border p-8 rounded-xl">
-            <ul className="space-y-6">
+          <div
+            className="p-8 rounded-xl"
+            style={{
+              backgroundColor: "hsl(36, 60%, 99%)",
+              border: "1px solid hsl(30, 25%, 87%)",
+              boxShadow: "0 2px 10px rgba(107,75,50,0.07)",
+            }}
+          >
+            <ul className="space-y-5">
               {certifications.map((cert, idx) => (
                 <li key={idx} className="flex items-start gap-4">
-                  <Award className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-lg text-foreground font-medium leading-tight">{cert}</span>
+                  <Award
+                    className="w-5 h-5 shrink-0 mt-0.5"
+                    style={{ color: "#D96A2B" }}
+                  />
+                  <span
+                    className="text-base font-medium leading-snug"
+                    style={{ fontFamily: "'Lora', serif", color: "#1A1209" }}
+                  >
+                    {cert}
+                  </span>
                 </li>
               ))}
             </ul>
