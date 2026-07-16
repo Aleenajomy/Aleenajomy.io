@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
-
-const navItems = [
-  { label: "About",      href: "#about" },
-  { label: "Skills",     href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects",   href: "#projects" },
-  { label: "Education",  href: "#education" },
-  { label: "Contact",    href: "#contact" },
-];
+import { navItems } from "@/data/navigation";
+import { siteConfig } from "@/config/site";
 
 function scrollTo(e: React.MouseEvent<HTMLAnchorElement>, id: string) {
   e.preventDefault();
@@ -35,7 +28,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <a href="#home" onClick={(e) => scrollTo(e, "#home")} className="logo">
-            Aleena Jomy
+            {siteConfig.name}
           </a>
 
           {/* Desktop nav */}

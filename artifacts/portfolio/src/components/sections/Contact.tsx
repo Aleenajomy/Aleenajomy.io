@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { siteConfig } from "@/config/site";
 
 export default function Contact() {
   return (
@@ -40,31 +41,31 @@ export default function Contact() {
             style={{ width: "100%" }}
           >
             <div style={{ borderBottom: "1.5px solid var(--ink)", paddingBottom: "10px" }}>
-              <a 
-                href="mailto:aleenajomy4@gmail.com"
+              <a
+                href={siteConfig.links.mailto}
                 style={{ fontSize: "16px", textDecoration: "none", border: "none" }}
               >
-                aleenajomy4@gmail.com
+                {siteConfig.email}
               </a>
             </div>
             <div style={{ borderBottom: "1.5px solid var(--ink)", paddingBottom: "10px" }}>
-              <a 
-                href="https://linkedin.com/in/aleena-jomy" 
-                target="_blank" 
+              <a
+                href={siteConfig.links.linkedin}
+                target="_blank"
                 rel="noreferrer"
                 style={{ fontSize: "16px", textDecoration: "none", border: "none" }}
               >
-                linkedin.com/in/aleena-jomy
+                {siteConfig.display.linkedin}
               </a>
             </div>
             <div style={{ borderBottom: "1.5px solid var(--ink)", paddingBottom: "10px" }}>
-              <a 
-                href="https://github.com/Aleenajomy" 
-                target="_blank" 
+              <a
+                href={siteConfig.links.github}
+                target="_blank"
                 rel="noreferrer"
                 style={{ fontSize: "16px", textDecoration: "none", border: "none" }}
               >
-                github.com/Aleenajomy
+                {siteConfig.display.github}
               </a>
             </div>
           </motion.div>

@@ -1,27 +1,5 @@
 import React from "react";
-
-// 02 — Toolkit  (4-col grid)  +  03 — Services (terminal)
-const toolkit = [
-  { name: "Python / Django",  sub: "Backend & REST APIs" },
-  { name: "React / Node.js",  sub: "Frontend & server" },
-  { name: "PostgreSQL / SQL", sub: "Data & optimization" },
-  { name: "Git / Docker",     sub: "Versioning & infra" },
-  { name: "JavaScript / TS",  sub: "Modern web stack" },
-  { name: "JWT / RBAC",       sub: "Auth & security" },
-  { name: "Render / Vercel",  sub: "Cloud deployment" },
-  { name: "Postman / Linux",  sub: "Dev tooling" },
-];
-
-const services = [
-  "API design & development",
-  "database architecture & optimization",
-  "authentication systems (JWT / RBAC)",
-  "full-stack web applications",
-  "security auditing (OWASP)",
-  "performance tuning & indexing",
-  "cloud deployment (Render, Vercel)",
-  "AI-assisted development",
-];
+import { toolkit, services } from "@/data/skills";
 
 export default function Skills() {
   return (

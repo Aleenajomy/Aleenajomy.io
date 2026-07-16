@@ -1,11 +1,6 @@
 import React from "react";
-import { Github, Linkedin, Mail } from "lucide-react";
-
-const socials = [
-  { Icon: Github,   href: "https://github.com/Aleenajomy",                                 label: "GitHub" },
-  { Icon: Linkedin, href: "https://linkedin.com/in/aleena-jomy",                            label: "LinkedIn" },
-  { Icon: Mail,     href: "https://mail.google.com/mail/?view=cm&to=aleenajomy4@gmail.com", label: "Email" },
-];
+import { socials } from "@/data/socials";
+import { siteConfig } from "@/config/site";
 
 export default function Hero() {
   return (
@@ -52,7 +47,7 @@ export default function Hero() {
               View Work ↓
             </a>
             <a
-              href="https://mail.google.com/mail/?view=cm&to=aleenajomy4@gmail.com"
+              href={siteConfig.links.gmailCompose}
               target="_blank"
               rel="noreferrer"
               className="btn btn-outline"
