@@ -1,173 +1,91 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { GraduationCap, Award } from "lucide-react";
 
 const education = [
   {
-    degree: "B.Tech in Computer Science & Engineering",
+    degree:      "B.Tech — Computer Science & Engineering",
     institution: "Government Engineering College, Wayanad",
-    period: "Sep 2022 – Apr 2025",
-    grade: "CGPA: 6.57/10"
+    period:      "Sep 2022 – Apr 2025",
+    accent:      "var(--blue)",
   },
   {
-    degree: "Diploma in Computer Engineering",
-    institution: "Government Residential Women's Polytechnic College, Payyannur",
-    period: "Aug 2016 – Apr 2019",
-    grade: "CGPA: 6.79/10"
-  }
+    degree:      "Diploma — Computer Engineering",
+    institution: "Govt Residential Women's Polytechnic, Payyannur",
+    period:      "Aug 2016 – Apr 2019",
+    accent:      "var(--pink)",
+  },
 ];
 
 const certifications = [
-  "The Cybersecurity Threat Landscape",
   "Introduction to Career Skills in Software Development",
-  "Foundations of Cybersecurity",
-  "Cybersecurity Awareness: Cybersecurity Terminology",
-  "How to Become Highly Paid Hacker"
+  "AWS S3 Basics",
+  "Using Git with Visual Studio Code",
+  "CSS Essentials",
+  "AI Fundamentals with IBM SkillsBuild",
+  "Programming with Python 3.x",
 ];
 
 export default function Education() {
   return (
-    <section
-      id="education"
-      className="py-24"
-      style={{ borderBottom: "1px solid hsl(30, 25%, 87%)" }}
-    >
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16">
+    <section id="education" className="section" style={{ position: "relative" }}>
+      {/* Brutalist Doodles */}
+      <div className="doodle doodle-blue-star" style={{ position: "absolute", top: "10%", right: "8%" }}>★</div>
+      <div className="doodle doodle-plus-mark" style={{ position: "absolute", bottom: "12%", left: "4%" }} />
 
-        {/* Education Column */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-        >
-          <p
-            className="text-sm tracking-[0.2em] uppercase mb-3"
-            style={{ fontFamily: "'Courier Prime', monospace", color: "#D96A2B" }}
-          >
-            05. Academic Background
-          </p>
-          <h2
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: "'Cinzel', serif", color: "#1A1209", lineHeight: 1.2 }}
-          >
-            Education
-          </h2>
-          <div
-            className="h-1 w-24 rounded-full mb-10"
-            style={{ background: "linear-gradient(90deg, #D96A2B, #F0944A)" }}
-          />
+      {/* Hollow triangle */}
+      <svg width="40" height="40" viewBox="0 0 40 40" style={{ position: "absolute", zIndex: 0, pointerEvents: "none", bottom: "15%", right: "12%", transform: "rotate(-25deg)" }}>
+        <polygon points="20,4 36,36 4,36" fill="none" stroke="var(--ink)" strokeWidth="3" />
+      </svg>
 
-          <div className="space-y-6">
-            {education.map((edu, idx) => (
+      {/* Asterisk cluster */}
+      <div style={{ position: "absolute", zIndex: 0, pointerEvents: "none", top: "15%", left: "15%", fontFamily: "'IBM Plex Mono', monospace", color: "var(--ink)" }}>
+        <span style={{ fontSize: "14px", position: "absolute", top: 0, left: 0 }}>*</span>
+        <span style={{ fontSize: "20px", position: "absolute", top: "-8px", left: "12px" }}>*</span>
+        <span style={{ fontSize: "11px", position: "absolute", top: "10px", left: "6px" }}>*</span>
+      </div>
+      <div className="wrap">
+
+        <div className="section-label">06 — Education</div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px" }}>
+
+          {/* Academic record */}
+          <div>
+            <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "12px", textTransform: "uppercase", letterSpacing: ".1em", color: "var(--pink)", fontWeight: 600, marginBottom: "20px" }}>
+              // Academic Record
+            </p>
+            {education.map((edu, i) => (
               <div
-                key={idx}
-                className="p-6 rounded-xl relative overflow-hidden group transition-all duration-300 hover:-translate-y-1"
-                style={{
-                  backgroundColor: "hsl(36, 60%, 99%)",
-                  border: "1px solid hsl(30, 25%, 87%)",
-                  boxShadow: "0 2px 10px rgba(107,75,50,0.07)",
-                }}
+                key={i}
+                className="edu-card"
+                style={{ borderTop: `3px solid ${edu.accent}`, boxShadow: `5px 5px 0 ${edu.accent}` }}
               >
-                {/* Decorative corner flourish */}
-                <div
-                  className="absolute right-0 top-0 w-20 h-20 rounded-bl-full transition-transform group-hover:scale-110"
-                  style={{ backgroundColor: "rgba(217,106,43,0.07)" }}
-                />
-
-                <GraduationCap
-                  className="w-8 h-8 mb-4"
-                  style={{ color: "#D96A2B" }}
-                />
-                <h3
-                  className="text-lg font-bold mb-1"
-                  style={{ fontFamily: "'Cinzel', serif", color: "#1A1209" }}
-                >
-                  {edu.degree}
-                </h3>
-                <p
-                  className="font-medium mb-1"
-                  style={{ fontFamily: "'Lora', serif", color: "hsl(25, 20%, 45%)" }}
-                >
-                  {edu.institution}
-                </p>
-                <div
-                  className="flex flex-wrap items-center justify-between gap-3 mt-4 pt-4 text-sm"
-                  style={{ borderTop: "1px solid hsl(30, 25%, 88%)" }}
-                >
-                  <span
-                    style={{ fontFamily: "'Courier Prime', monospace", color: "#D96A2B" }}
-                  >
-                    {edu.period}
-                  </span>
-                  <span
-                    className="px-3 py-1 rounded-md"
-                    style={{
-                      fontFamily: "'Courier Prime', monospace",
-                      backgroundColor: "#FFF3EB",
-                      color: "#C05A20",
-                      border: "1px solid rgba(217,106,43,0.2)",
-                    }}
-                  >
-                    {edu.grade}
-                  </span>
-                </div>
+                <div className="edu-degree">{edu.degree}</div>
+                <div className="edu-inst">{edu.institution}</div>
+                <span className="edu-period">{edu.period}</span>
               </div>
             ))}
           </div>
-        </motion.div>
 
-        {/* Certifications Column */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <p
-            className="text-sm tracking-[0.2em] uppercase mb-3"
-            style={{ fontFamily: "'Courier Prime', monospace", color: "#D96A2B" }}
-          >
-            06. Credentials
-          </p>
-          <h2
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: "'Cinzel', serif", color: "#1A1209", lineHeight: 1.2 }}
-          >
-            Certifications
-          </h2>
-          <div
-            className="h-1 w-24 rounded-full mb-10"
-            style={{ background: "linear-gradient(90deg, #D96A2B, #F0944A)" }}
-          />
-
-          <div
-            className="p-8 rounded-xl"
-            style={{
-              backgroundColor: "hsl(36, 60%, 99%)",
-              border: "1px solid hsl(30, 25%, 87%)",
-              boxShadow: "0 2px 10px rgba(107,75,50,0.07)",
-            }}
-          >
-            <ul className="space-y-5">
-              {certifications.map((cert, idx) => (
-                <li key={idx} className="flex items-start gap-4">
-                  <Award
-                    className="w-5 h-5 shrink-0 mt-0.5"
-                    style={{ color: "#D96A2B" }}
-                  />
-                  <span
-                    className="text-base font-medium leading-snug"
-                    style={{ fontFamily: "'Lora', serif", color: "#1A1209" }}
-                  >
-                    {cert}
-                  </span>
-                </li>
-              ))}
-            </ul>
+          {/* Certifications — terminal */}
+          <div>
+            <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "12px", textTransform: "uppercase", letterSpacing: ".1em", color: "var(--blue)", fontWeight: 600, marginBottom: "20px" }}>
+              // Certifications
+            </p>
+            <div className="terminal">
+              <div className="terminal-head">
+                <span className="dot" style={{ background: "var(--pink)" }} />
+                <span className="dot" style={{ background: "var(--yellow)" }} />
+                <span className="dot" style={{ background: "var(--green)" }} />
+              </div>
+              <div className="terminal-body">
+                {certifications.map((c) => (
+                  <div key={c} className="terminal-item">{c}</div>
+                ))}
+              </div>
+            </div>
           </div>
-        </motion.div>
 
+        </div>
       </div>
     </section>
   );

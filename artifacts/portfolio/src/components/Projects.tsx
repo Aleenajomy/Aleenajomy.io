@@ -1,175 +1,94 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Github, ExternalLink, BookOpen } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 
+// 3-col grid, colored thumbs matching the exact project details
 const projects = [
   {
-    title: "MoneySuivi – Personal Finance Management Platform",
-    year: "2026",
-    tech: ["React", "Node.js", "Express.js", "PostgreSQL", "Prisma"],
-    description: "Full-stack personal finance platform supporting expense tracking, budget management, EMI monitoring, asset tracking, and borrow/lend ledger management. Built 20+ REST API endpoints for transactions, budgets, loans, notifications, auth, and financial analytics. Implemented JWT auth, recurring transaction automation, PWA support, and web push notifications.",
-    live: "https://smartexpencetracker-frontend.onrender.com",
-    github: null
+    thumb:    "var(--pink)",
+    label:    "Full-Stack · May 2026",
+    title:    "MoneySuivi",
+    sub:      "Personal Finance Management Platform",
+    tech:     "Node.js · Express · PostgreSQL · Prisma · React",
+    desc:     "Engineered a full-stack personal finance app supporting EMI management, budget planning, and financial analytics. Built 20+ REST APIs with JWT, recurring automation, PWA, and push notifications.",
+    live:     "https://smartexpencetracker-frontend.onrender.com",
+    github:   "https://github.com/Aleenajomy/MoneySuivi",
   },
   {
-    title: "Finder – Hyperlocal Worker Discovery Platform",
-    year: "2026",
-    tech: ["Django", "DRF", "React", "PostgreSQL"],
-    description: "Geolocation-based platform enabling discovery of nearby service providers. Developed 10+ REST API endpoints for search, filtering, and efficient data retrieval. Implemented pincode-level filtering logic for accurate location-based results. Deployed on Render and Vercel.",
-    live: "https://finder-swart.vercel.app",
-    github: null
+    thumb:    "var(--blue)",
+    label:    "Django · Apr 2026",
+    title:    "Finder",
+    sub:      "Hyperlocal Worker Discovery Platform",
+    tech:     "Django · DRF · PostgreSQL · React",
+    desc:     "Developed a hyperlocal worker discovery platform using location-aware search. Implemented pincode-based matching REST APIs with CRUD, optimized PostgreSQL queries, and deployed to Render/Vercel.",
+    live:     "https://finder-swart.vercel.app",
+    github:   "https://github.com/Aleenajomy/Finder",
   },
   {
-    title: "ResumeMaker – AI ATS Resume Optimizer",
-    year: "2026",
-    tech: ["React", "TypeScript", "Django", "PostgreSQL", "LaTeX"],
-    description: "AI-powered application producing job-specific, ATS-optimized resumes, reducing manual editing time by ~70%. LaTeX-driven PDF generation with 100% parse accuracy across 5 ATS tools. ATS keyword analysis module increased resume-job match scores by 40 percentage points.",
-    live: null,
-    github: "https://github.com/Aleenajomy/ResumeMaker"
+    thumb:    "var(--green)",
+    label:    "Full-Stack · Feb – Mar 2026",
+    title:    "ResumeMaker",
+    sub:      "AI ATS Resume Optimizer",
+    tech:     "React · TypeScript · Django · PostgreSQL · LaTeX",
+    desc:     "Built an AI-powered ATS resume optimizer generating tailored resumes from job descriptions. Designed secure Django REST APIs, PostgreSQL management, and automated LaTeX PDF generation.",
+    live:     "https://resume-maker-three-omega.vercel.app",
+    github:   "https://github.com/Aleenajomy/ResumeMaker",
   },
-  {
-    title: "Stylo – Virtual Wardrobe Web Application",
-    year: "2024-2025",
-    tech: ["Django", "React", "MySQL"],
-    description: "Wardrobe management with category-based filtering across 6 outfit types. Improved MySQL query performance by 35% through indexing. Real-time wardrobe updates without full page reloads.",
-    live: null,
-    github: "https://github.com/Aleenajomy/Stylo"
-  }
 ];
 
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="py-24 relative"
-      style={{
-        backgroundColor: "hsl(35, 55%, 95%)",
-        borderTop: "1px solid hsl(30, 25%, 87%)",
-        borderBottom: "1px solid hsl(30, 25%, 87%)",
-      }}
-    >
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
-        >
-          <p
-            className="text-sm tracking-[0.2em] uppercase mb-3"
-            style={{ fontFamily: "'Courier Prime', monospace", color: "#D96A2B" }}
-          >
-            04. What I've Built
-          </p>
-          <h2
-            className="text-4xl md:text-5xl font-bold"
-            style={{ fontFamily: "'Cinzel', serif", color: "#1A1209", lineHeight: 1.2 }}
-          >
-            Featured Projects
-          </h2>
-          <div
-            className="h-1 w-24 rounded-full mt-4"
-            style={{ background: "linear-gradient(90deg, #D96A2B, #F0944A)" }}
-          />
-        </motion.div>
+    <section id="projects" className="section" style={{ position: "relative" }}>
+      {/* Brutalist Doodles */}
+      <div className="doodle doodle-pink-ring" style={{ position: "absolute", top: "10%", right: "6%" }} />
+      <div className="doodle doodle-plus-mark" style={{ position: "absolute", bottom: "15%", left: "4%" }} />
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="rounded-xl p-8 flex flex-col h-full group transition-all duration-300 hover:-translate-y-2"
-              style={{
-                backgroundColor: "hsl(36, 60%, 99%)",
-                border: "1px solid hsl(30, 25%, 87%)",
-                boxShadow: "0 2px 12px rgba(107,75,50,0.07)",
-                borderTop: "3px solid transparent",
-                // We'll handle the hover border top via a wrapper approach using inline style transition
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.borderTop = "3px solid #D96A2B";
-                (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 28px rgba(217,106,43,0.15)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.borderTop = "3px solid transparent";
-                (e.currentTarget as HTMLDivElement).style.boxShadow = "0 2px 12px rgba(107,75,50,0.07)";
-              }}
-            >
-              {/* Header row */}
-              <div className="flex justify-between items-start mb-6">
-                <BookOpen
-                  className="w-9 h-9"
-                  style={{ color: "#D96A2B" }}
-                />
-                <div className="flex gap-4">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="transition-all hover:-translate-y-0.5"
-                      style={{ color: "hsl(25, 20%, 55%)" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "#D96A2B")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(25, 20%, 55%)")}
-                    >
-                      <Github size={20} />
+      {/* Dashed arrow pointing to card */}
+      <svg width="90" height="40" viewBox="0 0 90 40" style={{ position: "absolute", zIndex: 0, pointerEvents: "none", top: "15%", left: "15%", transform: "rotate(-15deg)" }}>
+        <path d="M5,20 L75,20" fill="none" stroke="var(--ink)" strokeWidth="2.5" strokeDasharray="5,4" />
+        <path d="M65,10 L75,20 L65,30" fill="none" stroke="var(--ink)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+
+      {/* Corner hazard stripe patch */}
+      <div style={{
+        position: "absolute", zIndex: 0, pointerEvents: "none", bottom: "20px", right: "20px",
+        width: "40px", height: "40px",
+        backgroundImage: "repeating-linear-gradient(45deg, var(--ink), var(--ink) 6px, var(--yellow) 6px, var(--yellow) 12px)",
+        border: "2px solid var(--ink)"
+      }} />
+
+      <div className="wrap">
+        <div className="section-label">05 — Selected Work</div>
+
+        <div className="proj-grid">
+          {projects.map((p) => (
+            <div key={p.title} className="proj-card">
+              {/* Colored thumbnail block */}
+              <div className="proj-thumb" style={{ background: p.thumb }}>
+                {p.label}
+              </div>
+
+              <div className="proj-body">
+                <div className="proj-title">{p.title}</div>
+                <div className="proj-sub" style={{ fontWeight: "bold", marginBottom: "8px" }}>{p.sub}</div>
+                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", lineHeight: "1.5", marginBottom: "12px", color: "var(--ink)", opacity: 0.85 }}>
+                  {p.desc}
+                </p>
+                <div className="proj-sub" style={{ opacity: .55, fontSize: "11.5px", marginBottom: "0" }}>{p.tech}</div>
+
+                <div className="proj-tags" style={{ marginTop: "14px" }}>
+                  {p.live && (
+                    <a href={p.live} target="_blank" rel="noreferrer" className="proj-tag">
+                      <ExternalLink size={11} /> Live
                     </a>
                   )}
-                  {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="transition-all hover:-translate-y-0.5"
-                      style={{ color: "hsl(25, 20%, 55%)" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "#D96A2B")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(25, 20%, 55%)")}
-                    >
-                      <ExternalLink size={20} />
+                  {p.github && (
+                    <a href={p.github} target="_blank" rel="noreferrer" className="proj-tag">
+                      <Github size={11} /> Code
                     </a>
                   )}
                 </div>
               </div>
-
-              <h3
-                className="text-xl font-bold mb-3 transition-colors"
-                style={{ fontFamily: "'Cinzel', serif", color: "#1A1209" }}
-              >
-                {project.title}
-              </h3>
-
-              <p
-                className="text-sm leading-relaxed mb-6 flex-grow"
-                style={{ fontFamily: "'Lora', serif", color: "hsl(25, 20%, 45%)" }}
-              >
-                {project.description}
-              </p>
-
-              {/* Tech tags */}
-              <ul
-                className="flex flex-wrap gap-2 mt-auto pt-4"
-                style={{ borderTop: "1px solid hsl(30, 25%, 88%)" }}
-              >
-                {project.tech.map((t, i) => (
-                  <li
-                    key={i}
-                    className="text-xs px-2.5 py-1 rounded"
-                    style={{
-                      fontFamily: "'Courier Prime', monospace",
-                      backgroundColor: "#FFF3EB",
-                      color: "#C05A20",
-                      border: "1px solid rgba(217,106,43,0.2)",
-                    }}
-                  >
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

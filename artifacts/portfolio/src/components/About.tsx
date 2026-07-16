@@ -1,112 +1,60 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Server, ShieldCheck, Database, Zap } from "lucide-react";
-
-const features = [
-  {
-    icon: <Server style={{ color: "#D96A2B" }} className="w-6 h-6" />,
-    title: "Backend Architecture",
-    description: "Designing scalable, real-world user-centric systems driven by clean architecture."
-  },
-  {
-    icon: <ShieldCheck style={{ color: "#D96A2B" }} className="w-6 h-6" />,
-    title: "Security-First",
-    description: "Implementing JWT authentication, RBAC, and OWASP best practices for robust security."
-  },
-  {
-    icon: <Database style={{ color: "#D96A2B" }} className="w-6 h-6" />,
-    title: "Data Modeling",
-    description: "Structuring complex data relationships and optimizing queries in PostgreSQL and MySQL."
-  },
-  {
-    icon: <Zap style={{ color: "#D96A2B" }} className="w-6 h-6" />,
-    title: "RESTful APIs",
-    description: "Building efficient, well-documented endpoints for seamless frontend integration."
-  }
-];
 
 export default function About() {
   return (
-    <section id="about" className="py-24 relative">
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl"
+    <section id="about" className="section" style={{ position: "relative" }}>
+      {/* Brutalist Doodles */}
+      <div className="doodle doodle-dashed-circle" style={{ position: "absolute", bottom: "10%", left: "5%" }} />
+      <div className="doodle doodle-plus-mark" style={{ position: "absolute", top: "15%", right: "8%" }} />
+      
+      {/* Hollow triangle */}
+      <svg width="40" height="40" viewBox="0 0 40 40" style={{ position: "absolute", zIndex: 0, pointerEvents: "none", top: "45%", left: "45%", transform: "rotate(15deg)" }}>
+        <polygon points="20,4 36,36 4,36" fill="none" stroke="var(--ink)" strokeWidth="3" />
+      </svg>
+
+      {/* Asterisk cluster */}
+      <div style={{ position: "absolute", zIndex: 0, pointerEvents: "none", top: "70%", right: "12%", fontFamily: "'IBM Plex Mono', monospace", color: "var(--ink)" }}>
+        <span style={{ fontSize: "16px", position: "absolute", top: 0, left: 0 }}>*</span>
+        <span style={{ fontSize: "24px", position: "absolute", top: "-10px", left: "15px" }}>*</span>
+        <span style={{ fontSize: "12px", position: "absolute", top: "12px", left: "8px" }}>*</span>
+      </div>
+
+      <div className="wrap">
+        {/* Circle-around-word marker near section label */}
+        <div style={{ position: "relative", display: "inline-block" }}>
+          <div className="section-label" style={{ marginBottom: "24px" }}>01 — About</div>
+          <svg width="140" height="40" viewBox="0 0 140 50" style={{ position: "absolute", zIndex: 0, pointerEvents: "none", top: "-8px", left: "-6px" }}>
+            <ellipse cx="70" cy="25" rx="65" ry="20" fill="none" stroke="var(--ink)" strokeWidth="2.5" strokeDasharray="3,2" transform="rotate(-2, 70, 25)" />
+          </svg>
+        </div>
+
+        {/* Two-col: bio left, philosophy note right */}
+        <div
+          className="about-grid"
+          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", alignItems: "start" }}
         >
-          {/* Section label */}
-          <p
-            className="text-sm tracking-[0.2em] uppercase mb-3"
-            style={{ fontFamily: "'Courier Prime', monospace", color: "#D96A2B" }}
-          >
-            01. Who I Am
-          </p>
-
-          <h2
-            className="text-4xl md:text-5xl font-bold mb-6"
-            style={{ fontFamily: "'Cinzel', serif", color: "#1A1209", lineHeight: 1.2 }}
-          >
-            About Me
-          </h2>
-          {/* Ink underline */}
-          <div
-            className="h-1 w-24 rounded-full mb-8"
-            style={{ background: "linear-gradient(90deg, #D96A2B, #F0944A)" }}
-          />
-
-          <div
-            className="space-y-5 leading-relaxed text-lg"
-            style={{ fontFamily: "'Lora', serif", color: "hsl(25, 20%, 42%)" }}
-          >
-            <p>
-              I am a Computer Science graduate based in Kannur, Kerala, with hands-on experience developing web applications, REST APIs, and database-driven solutions using Python, Django, JavaScript, React, and PostgreSQL.
+          <div>
+            <p style={{ fontSize: "17px", lineHeight: 1.7, marginBottom: "20px", fontFamily: "'Space Grotesk', sans-serif" }}>
+              I'm a Computer Science graduate based in Kannur, Kerala with hands-on experience building
+              web applications, REST APIs, and database-driven systems using Python, Django, JavaScript,
+              React, and PostgreSQL.
             </p>
-            <p>
-              I've built full-stack applications involving authentication, data management, automation, and analytics while applying software development best practices. Familiar with API integration, database optimization, Git, GitHub, and modern development tools.
+            <p style={{ fontSize: "17px", lineHeight: 1.7, fontFamily: "'Space Grotesk', sans-serif" }}>
+              I've shipped full-stack apps covering authentication, data management, automation, and analytics —
+              applying software best practices throughout. Comfortable with API integration, database optimization,
+              Git, and modern dev tooling.
             </p>
           </div>
-        </motion.div>
 
-        {/* Feature cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="rounded-xl p-6 group transition-all duration-300 hover:-translate-y-1"
-              style={{
-                backgroundColor: "hsl(36, 60%, 99%)",
-                border: "1px solid hsl(30, 25%, 87%)",
-                boxShadow: "0 2px 10px rgba(107,75,50,0.07)",
-                borderLeft: "3px solid #D96A2B",
-              }}
-            >
-              <div
-                className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-transform group-hover:scale-110"
-                style={{ backgroundColor: "#FFF3EB" }}
-              >
-                {feature.icon}
-              </div>
-              <h3
-                className="text-lg font-bold mb-2"
-                style={{ fontFamily: "'Cinzel', serif", color: "#1A1209" }}
-              >
-                {feature.title}
-              </h3>
-              <p
-                className="text-sm leading-relaxed"
-                style={{ fontFamily: "'Lora', serif", color: "hsl(25, 20%, 48%)" }}
-              >
-                {feature.description}
-              </p>
-            </motion.div>
-          ))}
+          {/* Rotated yellow note — exactly like the reference */}
+          <div className="note">
+            <span className="note-title">My philosophy</span>
+            software should be unbreakable, not just functional.
+            build for scale from day one — security is architecture,
+            not an afterthought. good code explains itself.
+          </div>
         </div>
+
       </div>
     </section>
   );

@@ -1,217 +1,118 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { ChevronRight, ExternalLink, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
-// ── Shared style tokens ────────────────────────────────────────────────────
-const BRAND = "#D96A2B";
-const MUTED_COLOR = "hsl(25, 20%, 50%)";
-
-const badgeStyle: React.CSSProperties = {
-  fontFamily: "'Courier Prime', monospace",
-  backgroundColor: "hsl(36, 60%, 99%)",
-  border: "1px solid hsl(30, 25%, 85%)",
-  color: "#1A1209",
-};
-
-// ── Data ──────────────────────────────────────────────────────────────────
-const socialLinks = [
-  {
-    label: "GitHub",
-    href: "https://github.com/Aleenajomy",
-    Icon: Github,
-    extraClass: "-ml-2",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://linkedin.com/in/aleena-jomy",
-    Icon: Linkedin,
-    extraClass: "",
-  },
-  {
-    label: "Email",
-    href: "https://mail.google.com/mail/?view=cm&to=aleenajomy4@gmail.com",
-    Icon: Mail,
-    extraClass: "",
-  },
+const socials = [
+  { Icon: Github,   href: "https://github.com/Aleenajomy",                                 label: "GitHub" },
+  { Icon: Linkedin, href: "https://linkedin.com/in/aleena-jomy",                            label: "LinkedIn" },
+  { Icon: Mail,     href: "https://mail.google.com/mail/?view=cm&to=aleenajomy4@gmail.com", label: "Email" },
 ];
 
-const techBadges = [
-  {
-    label: "Python",
-    dotColor: "#3b82f6",
-    posClass: "absolute -right-10 top-10",
-  },
-  {
-    label: "Django REST",
-    dotColor: "#22c55e",
-    posClass: "absolute -left-10 bottom-24",
-  },
-  {
-    label: "PostgreSQL",
-    dotColor: "#eab308",
-    posClass: "absolute right-4 -bottom-5",
-  },
-];
-
-// ── Component ─────────────────────────────────────────────────────────────
 export default function Hero() {
   return (
-    <section id="home" className="min-h-[100dvh] flex items-center pt-20 relative overflow-hidden">
-      {/* Warm radial glow */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(217,106,43,0.06) 0%, transparent 70%)",
-        }}
-      />
+    <section id="home" className="hero" style={{ position: "relative" }}>
+      {/* Brutalist Doodles */}
+      <div className="doodle doodle-blue-star" style={{ position: "absolute", top: "10%", left: "4%" }}>★</div>
+      <div className="doodle doodle-pink-ring" style={{ position: "absolute", top: "8%", right: "12%" }} />
+      <div className="doodle doodle-plus-mark" style={{ position: "absolute", bottom: "14%", right: "8%" }} />
+      
+      {/* Corner hazard stripe patch */}
+      <div style={{
+        position: "absolute", zIndex: 0, pointerEvents: "none", top: "40px", left: "20px",
+        width: "40px", height: "40px",
+        backgroundImage: "repeating-linear-gradient(45deg, var(--ink), var(--ink) 6px, var(--yellow) 6px, var(--yellow) 12px)",
+        border: "2px solid var(--ink)"
+      }} />
 
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-start gap-6"
-        >
-          {/* Status pill */}
-          <div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm border"
-            style={{
-              fontFamily: "'Courier Prime', monospace",
-              backgroundColor: "#FFF3EB",
-              borderColor: BRAND,
-              color: BRAND,
-            }}
+      {/* Bold exclamation mark near CTA */}
+      <div style={{ position: "absolute", zIndex: 0, pointerEvents: "none", top: "45%", left: "40%", fontFamily: "'Archivo Black', sans-serif", fontSize: "28px", fontWeight: "900", color: "var(--pink)", transform: "rotate(15deg)" }}>!</div>
+
+      {/* Dashed arrow pointing to photo */}
+      <svg width="90" height="40" viewBox="0 0 90 40" style={{ position: "absolute", zIndex: 0, pointerEvents: "none", top: "25%", right: "35%", transform: "rotate(20deg)" }}>
+        <path d="M5,20 L75,20" fill="none" stroke="var(--ink)" strokeWidth="2.5" strokeDasharray="5,4" />
+        <path d="M65,10 L75,20 L65,30" fill="none" stroke="var(--ink)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+
+      {/* ── Left: text col ── */}
+      <div className="hero-left">
+
+        {/* Rotated yellow eyebrow */}
+        <span className="eyebrow">// Open to work</span>
+
+      {/* Giant headline with squiggly underline doodle */}
+      <h1 className="hero-h1" style={{ position: "relative" }}>
+        Backend<br />
+        that<br />
+        <span className="hollow" style={{ position: "relative" }}>
+          scales.
+          <svg width="100" height="12" viewBox="0 0 70 12" style={{ position: "absolute", zIndex: 0, bottom: "-8px", left: "0", pointerEvents: "none" }}>
+            <path d="M2,6 Q18,0 35,6 T68,6" fill="none" stroke="var(--ink)" strokeWidth="3.5" strokeLinecap="round"/>
+          </svg>
+        </span>
+      </h1>
+
+        {/* Description */}
+        <p className="hero-desc">
+          I'm Aleena — a backend-focused software engineer who builds scalable APIs,
+          clean architectures, and full-stack applications using Python, Django, Node.js,
+          and React. Security-first. Production-ready.
+        </p>
+
+        {/* CTA buttons */}
+        <div className="btn-row">
+          <a href="#projects" className="btn btn-primary">
+            View Work ↓
+          </a>
+          <a
+            href="https://mail.google.com/mail/?view=cm&to=aleenajomy4@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-outline"
           >
-            <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: BRAND }} />
-            Available for new opportunities
-          </div>
+            Say Hello
+          </a>
+        </div>
 
-          {/* Main heading */}
-          <div>
-            <h1
-              className="text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.05] mb-2"
-              style={{ fontFamily: "'Pirata One', cursive", color: "#1A1209", letterSpacing: "0.02em" }}
-            >
-              Aleena Jomy
-            </h1>
-            <div
-              className="h-1 w-full rounded-full"
-              style={{ background: "linear-gradient(90deg, #D96A2B, #F0944A, transparent)" }}
-            />
-            <p
-              className="text-xl md:text-2xl mt-4 font-medium tracking-widest uppercase"
-              style={{ fontFamily: "'Cinzel', serif", color: BRAND, letterSpacing: "0.18em" }}
-            >
-              Backend-Focused Software Engineer
-            </p>
-          </div>
-
-          {/* Bio */}
-          <p
-            className="text-lg leading-relaxed max-w-lg"
-            style={{ fontFamily: "'Lora', serif", color: "hsl(25, 20%, 40%)" }}
-          >
-            I specialize in building scalable RESTful APIs, robust backend architectures, and full-stack web applications using Python, Django, Node.js, and React.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center gap-4 mt-2">
+        {/* Social icons */}
+        <div className="social-row">
+          <span className="social-label">Find me:</span>
+          {socials.map(({ Icon, href, label }) => (
             <a
-              href="#projects"
-              className="px-6 py-3 rounded-md font-semibold flex items-center gap-2 transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
-              style={{
-                fontFamily: "'Cinzel', serif",
-                backgroundColor: BRAND,
-                color: "#FFF8F3",
-                border: "1px solid #C05A20",
-                boxShadow: "0 2px 8px rgba(217,106,43,0.3)",
-              }}
-            >
-              View My Work <ChevronRight size={18} />
-            </a>
-            <a
-              href={`${import.meta.env.BASE_URL}resume.pdf`}
+              key={label}
+              href={href}
               target="_blank"
               rel="noreferrer"
-              className="px-6 py-3 rounded-md font-semibold flex items-center gap-2 transition-all hover:-translate-y-0.5 hover:shadow-md active:translate-y-0"
-              style={{
-                fontFamily: "'Cinzel', serif",
-                backgroundColor: "#FFF8F3",
-                color: "#1A1209",
-                border: "1px solid hsl(30, 25%, 82%)",
-              }}
+              aria-label={label}
+              className="social-icon"
             >
-              <ExternalLink size={18} /> View Resume
+              <Icon size={16} />
             </a>
-          </div>
-
-          {/* Social links */}
-          <div
-            className="flex items-center gap-6 mt-6 pt-6 w-full max-w-md"
-            style={{ borderTop: "1px solid hsl(30, 25%, 82%)" }}
-          >
-            {socialLinks.map(({ label, href, Icon, extraClass }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                className={`p-2 transition-all hover:-translate-y-0.5 ${extraClass}`}
-                style={{ color: MUTED_COLOR }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = BRAND)}
-                onMouseLeave={(e) => (e.currentTarget.style.color = MUTED_COLOR)}
-              >
-                <Icon size={24} />
-                <span className="sr-only">{label}</span>
-              </a>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Photo / Visual side */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative hidden lg:block"
-        >
-          <div className="relative w-full max-w-md mx-auto aspect-square">
-            {/* Decorative rotated frame */}
-            <div
-              className="absolute inset-0 rounded-2xl rotate-3 scale-105"
-              style={{ border: "2px solid rgba(217,106,43,0.35)", background: "rgba(217,106,43,0.04)" }}
-            />
-            {/* Photo container */}
-            <div
-              className="absolute inset-0 rounded-2xl overflow-hidden flex items-center justify-center"
-              style={{
-                backgroundColor: "hsl(36, 60%, 97%)",
-                border: "1px solid hsl(30, 25%, 85%)",
-                boxShadow: "0 8px 32px rgba(107,75,50,0.12)",
-              }}
-            >
-              <img
-                src={`${import.meta.env.BASE_URL}avatar.png`}
-                alt="Aleena Jomy"
-                className="w-full h-full object-cover object-top"
-              />
-              <div className="absolute inset-0 pointer-events-none" style={{ boxShadow: "inset 0 0 60px rgba(26,18,9,0.15)" }} />
-            </div>
-
-            {/* Floating tech badges */}
-            {techBadges.map(({ label, dotColor, posClass }) => (
-              <div
-                key={label}
-                className={`${posClass} px-4 py-2 rounded-lg text-sm flex items-center gap-2 shadow-lg`}
-                style={badgeStyle}
-              >
-                <span className="w-2 h-2 rounded-full" style={{ backgroundColor: dotColor }} />
-                {label}
-              </div>
-            ))}
-          </div>
-        </motion.div>
+          ))}
+        </div>
       </div>
+
+      {/* ── Right: photo col ── */}
+      <div className="hero-right">
+        <div className="photo-wrap">
+          {/* Hard black offset shadow */}
+          <div className="photo-shadow" />
+
+          {/* Photo frame */}
+          <div className="photo-frame">
+            <img
+              src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/avatar.png`}
+              alt="Aleena Jomy"
+              onError={(e) => { e.currentTarget.style.display = "none"; }}
+            />
+
+            {/* Name label at bottom */}
+            <div className="photo-name">Aleena Jomy</div>
+          </div>
+
+          {/* Tape sits OUTSIDE photo-frame so overflow:hidden doesn't clip it */}
+          <div className="tape" />
+        </div>
+      </div>
+
     </section>
   );
 }
