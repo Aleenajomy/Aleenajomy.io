@@ -36,7 +36,7 @@ export default function About() {
               web applications, REST APIs, and database-driven systems using Python, Django, JavaScript,
               React, and PostgreSQL.
             </p>
-            <p style={{ fontSize: "17px", lineHeight: 1.7, fontFamily: "'Space Grotesk', sans-serif" }}>
+            <p className="hidden md:block" style={{ fontSize: "17px", lineHeight: 1.7, fontFamily: "'Space Grotesk', sans-serif" }}>
               I've shipped full-stack apps covering authentication, data management, automation, and analytics —
               applying software best practices throughout. Comfortable with API integration, database optimization,
               Git, and modern dev tooling.

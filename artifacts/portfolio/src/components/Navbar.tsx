@@ -60,7 +60,15 @@ export default function Navbar() {
 
         {/* Mobile drawer */}
         {open && (
-          <div style={{ borderTop: "2px solid var(--ink)", background: "var(--cream)" }}>
+          <div style={{
+            position: "absolute",
+            top: "100%",
+            left: 0,
+            right: 0,
+            background: "var(--cream)",
+            borderBottom: "3px solid var(--ink)",
+            zIndex: 1000,
+          }}>
             {navItems.map((n) => (
               <a
                 key={n.label}
