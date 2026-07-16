@@ -28,16 +28,6 @@ export default function Skills() {
     <>
       {/* ── 02 — Toolkit ── */}
       <section id="skills" className="section" style={{ position: "relative" }}>
-        {/* Brutalist Doodles */}
-        <div className="doodle doodle-blue-star" style={{ position: "absolute", top: "15%", right: "6%" }}>★</div>
-        <div className="doodle doodle-yellow-dot" style={{ position: "absolute", bottom: "25%", left: "4%" }} />
-        
-        {/* Bracket pair framing space */}
-        <div style={{ position: "absolute", zIndex: 0, pointerEvents: "none", top: "10%", left: "15%", fontFamily: "'Space Grotesk', sans-serif", fontSize: "40px", fontWeight: "bold", color: "rgba(19,19,19,0.3)", width: "100px", display: "flex", justifyContent: "space-between" }}>
-          <span>[</span>
-          <span>]</span>
-        </div>
-
         <div className="wrap">
           <div className="section-label">02 — Toolkit</div>
           <div className="skill-grid">
@@ -53,21 +43,6 @@ export default function Skills() {
 
       {/* ── 03 — Services ── */}
       <section className="section" style={{ position: "relative" }}>
-        {/* Brutalist Doodles */}
-        <div className="doodle doodle-pink-ring" style={{ position: "absolute", top: "25%", left: "5%" }} />
-        <div className="doodle doodle-plus-mark" style={{ position: "absolute", bottom: "20%", right: "8%" }} />
-        
-        {/* Zigzag / lightning bolt */}
-        <svg width="30" height="50" viewBox="0 0 30 50" style={{ position: "absolute", zIndex: 0, pointerEvents: "none", top: "10%", right: "12%" }}>
-          <path d="M20,2 L5,28 L25,22 L10,48" fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-
-        {/* Plus-sign grid */}
-        <div style={{ position: "absolute", zIndex: 0, pointerEvents: "none", bottom: "10%", left: "12%", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "12px", fontFamily: "'IBM Plex Mono', monospace", fontSize: "14px", color: "rgba(19,19,19,0.3)" }}>
-          <span>+</span><span>+</span><span>+</span>
-          <span>+</span><span>+</span><span>+</span>
-        </div>
-
         <div className="wrap">
           <div className="section-label">03 — Services</div>
           <div className="terminal">

@@ -38,23 +38,7 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="section" style={{ position: "relative" }}>
-      {/* Brutalist Doodles */}
-      <div className="doodle doodle-pink-ring" style={{ position: "absolute", top: "10%", right: "6%" }} />
-      <div className="doodle doodle-plus-mark" style={{ position: "absolute", bottom: "15%", left: "4%" }} />
 
-      {/* Dashed arrow pointing to card */}
-      <svg width="90" height="40" viewBox="0 0 90 40" style={{ position: "absolute", zIndex: 0, pointerEvents: "none", top: "15%", left: "15%", transform: "rotate(-15deg)" }}>
-        <path d="M5,20 L75,20" fill="none" stroke="var(--ink)" strokeWidth="2.5" strokeDasharray="5,4" />
-        <path d="M65,10 L75,20 L65,30" fill="none" stroke="var(--ink)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-
-      {/* Corner hazard stripe patch */}
-      <div style={{
-        position: "absolute", zIndex: 0, pointerEvents: "none", bottom: "20px", right: "20px",
-        width: "40px", height: "40px",
-        backgroundImage: "repeating-linear-gradient(45deg, var(--ink), var(--ink) 6px, var(--yellow) 6px, var(--yellow) 12px)",
-        border: "2px solid var(--ink)"
-      }} />
 
       <div className="wrap">
         <div className="section-label">05 — Selected Work</div>

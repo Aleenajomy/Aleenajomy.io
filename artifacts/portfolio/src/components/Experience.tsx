@@ -36,21 +36,6 @@ const experiences = [
 export default function Experience() {
   return (
     <section id="experience" className="section" style={{ position: "relative" }}>
-      {/* Brutalist Doodles */}
-      <div className="doodle doodle-dashed-circle" style={{ position: "absolute", top: "8%", right: "8%" }} />
-      <div className="doodle doodle-yellow-dot" style={{ position: "absolute", bottom: "10%", left: "5%" }} />
-
-      {/* Rotated outlined square */}
-      <div style={{ position: "absolute", zIndex: 0, pointerEvents: "none", top: "25%", left: "15%", width: "36px", height: "36px", border: "3px solid var(--ink)", transform: "rotate(10deg)" }} />
-
-      {/* Halftone dot cluster */}
-      <svg width="40" height="40" viewBox="0 0 40 40" style={{ position: "absolute", zIndex: 0, pointerEvents: "none", bottom: "25%", right: "12%" }}>
-        <circle cx="10" cy="10" r="3" fill="var(--ink)" />
-        <circle cx="20" cy="12" r="3.5" fill="var(--ink)" />
-        <circle cx="30" cy="15" r="2.5" fill="var(--ink)" />
-        <circle cx="15" cy="25" r="4" fill="var(--ink)" />
-        <circle cx="28" cy="28" r="3" fill="var(--ink)" />
-      </svg>
       <div className="wrap">
 
         <div className="section-label">04 — Career</div>

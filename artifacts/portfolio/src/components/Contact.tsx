@@ -4,10 +4,6 @@ import { motion } from "framer-motion";
 export default function Contact() {
   return (
     <section id="contact" className="contact-section" style={{ position: "relative", paddingBottom: "0" }}>
-      {/* Brutalist Doodles */}
-      <div className="doodle doodle-pink-ring" style={{ top: "10%", right: "15%" }} />
-      <div className="doodle doodle-plus-mark" style={{ bottom: "25%", left: "8%" }} />
-      
       <div className="wrap">
         <div className="foot-grid">
           

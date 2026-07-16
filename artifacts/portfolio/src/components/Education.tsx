@@ -26,22 +26,7 @@ const certifications = [
 
 export default function Education() {
   return (
-    <section id="education" className="section" style={{ position: "relative" }}>
-      {/* Brutalist Doodles */}
-      <div className="doodle doodle-blue-star" style={{ position: "absolute", top: "10%", right: "8%" }}>★</div>
-      <div className="doodle doodle-plus-mark" style={{ position: "absolute", bottom: "12%", left: "4%" }} />
-
-      {/* Hollow triangle */}
-      <svg width="40" height="40" viewBox="0 0 40 40" style={{ position: "absolute", zIndex: 0, pointerEvents: "none", bottom: "15%", right: "12%", transform: "rotate(-25deg)" }}>
-        <polygon points="20,4 36,36 4,36" fill="none" stroke="var(--ink)" strokeWidth="3" />
-      </svg>
-
-      {/* Asterisk cluster */}
-      <div style={{ position: "absolute", zIndex: 0, pointerEvents: "none", top: "15%", left: "15%", fontFamily: "'IBM Plex Mono', monospace", color: "var(--ink)" }}>
-        <span style={{ fontSize: "14px", position: "absolute", top: 0, left: 0 }}>*</span>
-        <span style={{ fontSize: "20px", position: "absolute", top: "-8px", left: "12px" }}>*</span>
-        <span style={{ fontSize: "11px", position: "absolute", top: "10px", left: "6px" }}>*</span>
-      </div>
+    <section id="education" className="section">
       <div className="wrap">
 
         <div className="section-label">06 — Education</div>
