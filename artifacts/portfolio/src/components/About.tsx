@@ -29,10 +29,7 @@ export default function About() {
         </div>
 
         {/* Two-col: bio left, philosophy note right */}
-        <div
-          className="about-grid"
-          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", alignItems: "start" }}
-        >
+        <div className="about-grid">
           <div>
             <p style={{ fontSize: "17px", lineHeight: 1.7, marginBottom: "20px", fontFamily: "'Space Grotesk', sans-serif" }}>
               I'm a Computer Science graduate based in Kannur, Kerala with hands-on experience building

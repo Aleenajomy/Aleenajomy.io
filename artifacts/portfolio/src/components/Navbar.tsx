@@ -39,7 +39,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop nav */}
-          <nav className="navlinks" style={{ listStyle: "none", display: "flex" as const }}>
+          <nav className="navlinks">
             {navItems.map((n) => (
               <a key={n.label} href={n.href} onClick={(e) => scrollTo(e, n.href)}>
                 {n.label}
@@ -50,7 +50,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setOpen(!open)}
-            style={{ display: "none", background: "none", border: "2px solid var(--ink)", padding: "5px 7px", cursor: "pointer" }}
+            style={{ background: "none", border: "2px solid var(--ink)", padding: "5px 7px", cursor: "pointer" }}
             className="mobile-toggle"
             aria-label="Toggle menu"
           >

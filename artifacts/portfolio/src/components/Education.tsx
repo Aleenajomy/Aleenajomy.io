@@ -46,7 +46,7 @@ export default function Education() {
 
         <div className="section-label">06 — Education</div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px" }}>
+        <div className="nb-edu-grid">
 
           {/* Academic record */}
           <div>

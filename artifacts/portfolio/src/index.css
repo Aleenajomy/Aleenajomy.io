@@ -102,6 +102,17 @@
   text-transform: uppercase;
   letter-spacing: .06em;
 }
+.mobile-toggle {
+  display: none;
+}
+@media (max-width: 768px) {
+  .navlinks {
+    display: none !important;
+  }
+  .mobile-toggle {
+    display: block !important;
+  }
+}
 .navlinks a {
   border-bottom: 2px solid transparent;
   padding-bottom: 1px;
@@ -634,6 +645,17 @@
 /* ══════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════ */
+/* Responsive grids for experience card and education sections */
+.nb-exp-card-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+}
+.nb-edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; }
   .hero-left { border-right: none; border-bottom: 3px solid var(--ink); margin-left: 0; padding: 44px 20px; }
@@ -642,9 +664,16 @@
   .proj-grid  { grid-template-columns: 1fr; }
   .foot-grid  { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; }
+  .note { transform: none !important; }
+  .nb-exp-card-grid { grid-template-columns: 1fr; }
+  .nb-exp-card-grid > div:first-child { border-right: none !important; border-bottom: 3px solid var(--ink); }
+  .nb-edu-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+@media (max-width: 768px) {
+  .doodle { display: none !important; }
 }
 @media (max-width: 540px) {
-  .skill-grid { grid-template-columns: 1fr 1fr; }
+  .skill-grid { grid-template-columns: 1fr; }
   .navlinks { gap: 14px; font-size: 11px; }
 }
 
