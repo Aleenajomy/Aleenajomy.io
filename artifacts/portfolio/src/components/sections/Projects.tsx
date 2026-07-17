@@ -9,6 +9,7 @@ export default function Projects() {
 
       <div className="wrap">
         <div className="section-label">05 — Selected Work</div>
+        <div className="swipe-hint">Swipe for more →</div>
 
         <div className="proj-grid">
           {projects.map((p) => (

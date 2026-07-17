@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { useIsMobile } from "@/hooks/use-mobile";
 import NotFound from "@/pages/not-found";
 
 import Navbar from "@/components/sections/Navbar";
@@ -14,24 +15,38 @@ import Skills from "@/components/sections/Skills";
 import Education from "@/components/sections/Education";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
+import MobileSections from "@/components/mobile/MobileSections";
 
 const queryClient = new QueryClient();
 
 function Home() {
+  const isMobile = useIsMobile();
+  // Which mobile accordion panel is open (mobile only; ignored on desktop).
+  const [activeSection, setActiveSection] = useState<string | null>("about");
+
+  const toggleSection = (id: string) =>
+    setActiveSection((prev) => (prev === id ? null : id));
+
   return (
     <div
       className="min-h-screen flex flex-col"
       style={{ color: "var(--ink)" }}
     >
-      <Navbar />
+      <Navbar isMobile={isMobile} onNavigate={setActiveSection} />
       <main className="flex-1">
         <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Education />
-        <Contact />
+        {isMobile ? (
+          <MobileSections active={activeSection} onToggle={toggleSection} />
+        ) : (
+          <>
+            <About />
+            <Skills />
+            <Experience />
+            <Projects />
+            <Education />
+            <Contact />
+          </>
+        )}
       </main>
       <Footer />
     </div>

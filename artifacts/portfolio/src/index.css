@@ -773,3 +773,101 @@
   border: 2px solid var(--ink);
   border-radius: 50%;
 }
+
+/* ══════════════════════════════════════
+   MOBILE SECTION ACCORDION (phones only)
+   Rendered only below the 768px breakpoint. Each content section becomes a
+   collapsible panel; one open at a time keeps the page short.
+══════════════════════════════════════ */
+.m-acc {
+  border-top: 3px solid var(--ink);
+}
+.m-acc-item {
+  border-bottom: 3px solid var(--ink);
+  scroll-margin-top: 66px; /* clear the sticky header when scrolled into view */
+}
+.m-acc-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 28px;
+  background: var(--cream);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--ink);
+  transition: background .15s ease;
+}
+.m-acc-header.open { background: var(--yellow); }
+.m-acc-title { flex: 1; }
+.m-acc-chev {
+  flex-shrink: 0;
+  transition: transform .2s ease;
+}
+.m-acc-header.open .m-acc-chev { transform: rotate(180deg); }
+
+/* Tighten the rendered sections inside a panel and drop their own dividers,
+   since the accordion item already provides the border. */
+.m-acc-body { animation: m-acc-in .18s ease; }
+.m-acc-body .section,
+.m-acc-body .contact-section {
+  padding-top: 12px;
+  padding-bottom: 32px;
+  border-bottom: none;
+}
+.m-acc-body .section-label { margin-bottom: 24px; }
+
+@keyframes m-acc-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ══════════════════════════════════════
+   CARD CAROUSELS (phones only)
+   Experience + Projects cards become a horizontal swipe strip instead of a
+   tall vertical stack, cutting the amount of scrolling on mobile.
+══════════════════════════════════════ */
+.exp-track { display: contents; } /* inert wrapper on desktop — no layout box */
+.swipe-hint { display: none; }
+
+@media (max-width: 768px) {
+  .swipe-hint {
+    display: block;
+    margin: -14px 0 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--ink);
+    opacity: .5;
+  }
+
+  .exp-track,
+  .proj-grid {
+    display: flex;
+    grid-template-columns: none; /* override desktop grid on .proj-grid */
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 16px;
+    margin-right: -28px;         /* bleed to the screen edge to hint scrollability */
+    scrollbar-width: none;
+  }
+  .exp-track::-webkit-scrollbar,
+  .proj-grid::-webkit-scrollbar { display: none; }
+
+  .exp-track > .exp-card,
+  .proj-grid > .proj-card {
+    flex: 0 0 86%;              /* one card at a time, with a peek of the next */
+    scroll-snap-align: start;
+    margin-bottom: 0;
+  }
+}

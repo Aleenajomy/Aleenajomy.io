@@ -9,8 +9,29 @@ function scrollTo(e: React.MouseEvent<HTMLAnchorElement>, id: string) {
   if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 64, behavior: "smooth" });
 }
 
-export default function Navbar() {
+interface NavbarProps {
+  /** True below the mobile breakpoint; enables the accordion navigation. */
+  isMobile?: boolean;
+  /** Open the matching mobile accordion panel by id (e.g. "about"). */
+  onNavigate?: (id: string) => void;
+}
+
+export default function Navbar({ isMobile = false, onNavigate }: NavbarProps) {
   const [open, setOpen] = useState(false);
+
+  // On desktop: smooth-scroll to the section. On mobile: open its accordion
+  // panel instead (which then scrolls itself into view). "#home" always scrolls
+  // to the top since the hero is never inside the accordion.
+  const handleNav = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const id = href.replace(/^#/, "");
+    if (isMobile && onNavigate && id !== "home") {
+      e.preventDefault();
+      onNavigate(id);
+    } else {
+      scrollTo(e, href);
+    }
+    setOpen(false);
+  };
 
   return (
     <>
@@ -27,14 +48,14 @@ export default function Navbar() {
         <div className="wrap site-nav">
 
           {/* Logo */}
-          <a href="#home" onClick={(e) => scrollTo(e, "#home")} className="logo">
+          <a href="#home" onClick={(e) => handleNav(e, "#home")} className="logo">
             {siteConfig.name}
           </a>
 
           {/* Desktop nav */}
           <nav className="navlinks">
             {navItems.map((n) => (
-              <a key={n.label} href={n.href} onClick={(e) => scrollTo(e, n.href)}>
+              <a key={n.label} href={n.href} onClick={(e) => handleNav(e, n.href)}>
                 {n.label}
               </a>
             ))}
@@ -66,7 +87,7 @@ export default function Navbar() {
               <a
                 key={n.label}
                 href={n.href}
-                onClick={(e) => { scrollTo(e, n.href); setOpen(false); }}
+                onClick={(e) => handleNav(e, n.href)}
                 style={{
                   display: "block",
                   padding: "14px 28px",
