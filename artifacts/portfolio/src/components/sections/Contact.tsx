@@ -20,15 +20,6 @@ export default function Contact() {
               something<br />
               <span className="hollow">loud.</span>
             </h2>
-            
-            <a
-              href="/resume.pdf"
-              download
-              className="btn btn-primary"
-              style={{ padding: "14px 28px", fontSize: "14px" }}
-            >
-              Download Résumé
-            </a>
           </motion.div>
 
           {/* Right Panel (Contact List with horizontal lines) */}
